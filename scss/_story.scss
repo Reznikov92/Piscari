@@ -1,0 +1,51 @@
+.story {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 365px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #e9e8dc;
+}
+
+.story-image {
+  min-height: 365px;
+  background: url("https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1100&q=85") center/cover;
+}
+
+.story-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 52px 12%;
+}
+
+.story-content .section-kicker {
+  color: var(--green);
+}
+
+.story-content h2 {
+  max-width: 430px;
+  margin: 13px 0 14px;
+  font: 500 39px/1.08 var(--serif);
+  letter-spacing: -.035em;
+}
+
+.story-content p {
+  max-width: 380px;
+  margin: 0;
+  color: #687168;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.story-content .button {
+  margin-top: 23px;
+  background: var(--green);
+  color: white;
+}
+
+.story-content .button:hover {
+  background: var(--green-dark);
+}

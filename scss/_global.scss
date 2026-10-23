@@ -1,0 +1,49 @@
+:root {
+  --paper: #f5f3ec;
+  --white: #fffefa;
+  --ink: #202c24;
+  --muted: #7b8179;
+  --green: #244b37;
+  --green-dark: #173526;
+  --lime: #d9e793;
+  --orange: #df7048;
+  --line: #e8e6dd;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: "DM Sans", Arial, sans-serif;
+  --display: "Manrope", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1240px, calc(100% - 80px));
+  margin: 0 auto;
+}

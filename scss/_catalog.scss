@@ -1,0 +1,309 @@
+.section {
+  padding: 77px 0 83px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.section-kicker {
+  color: #788177;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.section-heading h2 {
+  margin: 8px 0 0;
+  font: 500 42px/1.1 var(--serif);
+  letter-spacing: -.035em;
+}
+
+.section-heading h2 em {
+  color: var(--green);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 5px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.text-link svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.filter {
+  padding: 9px 15px;
+  border: 1px solid #dedfd5;
+  border-radius: 30px;
+  background: transparent;
+  color: #687168;
+  cursor: pointer;
+  font-size: 11px;
+  transition: .2s;
+}
+
+.filter:hover,
+.filter.active {
+  border-color: var(--green);
+  background: var(--green);
+  color: white;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.product-card {
+  min-width: 0;
+}
+
+.product-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1.08;
+  border-radius: 4px;
+  background: #e4e4dc;
+}
+
+.product-art {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.product-art svg {
+  width: 72%;
+  height: 76%;
+  overflow: visible;
+  filter: drop-shadow(0 18px 12px rgba(28, 39, 32, .2));
+  transition: transform .4s;
+}
+
+.product-card:hover .product-art svg {
+  transform: scale(1.07) rotate(-3deg);
+}
+
+.art-vibro {
+  background: radial-gradient(ellipse at 50% 40%, #edf0df, #cdd5c3 100%);
+}
+
+.art-twister {
+  background: radial-gradient(ellipse at 50% 40%, #e8ded0, #c8b9a5 100%);
+}
+
+.art-slug {
+  background: radial-gradient(ellipse at 50% 40%, #e2e5df, #bfc9be 100%);
+}
+
+.art-creature {
+  background: radial-gradient(ellipse at 50% 40%, #e8e1d2, #c9c0aa 100%);
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 9px;
+  border-radius: 2px;
+  background: var(--lime);
+  color: var(--green-dark);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.favorite {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 254, 250, .92);
+  cursor: pointer;
+}
+
+.favorite svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 1.5;
+}
+
+.favorite.selected svg {
+  fill: var(--orange);
+  stroke: var(--orange);
+}
+
+.product-info {
+  padding: 14px 2px 0;
+}
+
+.product-category {
+  color: #858b81;
+  text-transform: uppercase;
+  letter-spacing: .11em;
+  font-size: 9px;
+}
+
+.product-title {
+  min-height: 38px;
+  margin: 7px 0 10px;
+  font: 600 14px/1.4 var(--display);
+}
+
+.variant-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.size-options,
+.color-options {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.size-option {
+  min-width: 39px;
+  height: 27px;
+  padding: 0 7px;
+  border: 1px solid #dedfd5;
+  border-radius: 2px;
+  background: transparent;
+  color: #687168;
+  cursor: pointer;
+  font: 600 10px var(--sans);
+}
+
+.size-option.active {
+  border-color: var(--green);
+  background: var(--green);
+  color: #fff;
+}
+
+.color-option {
+  width: 19px;
+  height: 19px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  outline: 1px solid transparent;
+  cursor: pointer;
+}
+
+.color-option.active {
+  outline-color: var(--green);
+}
+
+.color-option[aria-label="Моторное масло"] {
+  background: #627c49;
+}
+
+.color-option[aria-label="Шартрез"] {
+  background: #c9d842;
+}
+
+.color-option[aria-label="Перламутр"] {
+  background: linear-gradient(135deg, #f9f7ed, #a6c2b5);
+}
+
+.color-option[aria-label="Машинное масло"] {
+  background: linear-gradient(135deg, #798b55, #4d5140);
+}
+
+.color-option[aria-label="Красный"] {
+  background: #c34e42;
+}
+
+.color-option[aria-label="Фиолетовый"] {
+  background: #79549b;
+}
+
+.color-option[aria-label="Тёмный"] {
+  background: #424944;
+}
+
+.color-option[aria-label="Оранжевый"] {
+  background: #e48743;
+}
+
+.color-option[aria-label="Коричневый"] {
+  background: #85583f;
+}
+
+.product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.price {
+  font: 700 14px var(--display);
+}
+
+.old-price {
+  margin-left: 6px;
+  color: #999c93;
+  font: 400 11px var(--sans);
+  text-decoration: line-through;
+}
+
+.add-cart {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #dfe1d7;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--green);
+  cursor: pointer;
+  transition: .2s;
+}
+
+.add-cart:hover {
+  border-color: var(--green);
+  background: var(--green);
+  color: white;
+}
+
+.add-cart svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+}

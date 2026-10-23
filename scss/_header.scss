@@ -1,0 +1,99 @@
+.topline {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--green-dark);
+  color: #edf1e6;
+  font-size: 11px;
+  letter-spacing: .07em;
+}
+
+.topline span {
+  color: var(--lime);
+  margin: 0 5px;
+}
+
+.header {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  background: var(--paper);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  display: block;
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  color: #535b54;
+  font-size: 13px;
+}
+
+.nav a {
+  transition: color .2s;
+}
+
+.nav a:hover {
+  color: var(--orange);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-button {
+  position: relative;
+  border: 0;
+  background: none;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.icon-button svg {
+  width: 21px;
+  height: 21px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+}
+
+.cart-count {
+  position: absolute;
+  top: 0;
+  right: -3px;
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--orange);
+  color: white;
+  font: 700 9px var(--sans);
+}
+
+.menu-toggle {
+  display: none;
+}

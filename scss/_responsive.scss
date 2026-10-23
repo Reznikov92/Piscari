@@ -1,0 +1,278 @@
+@media (max-width: 900px) {
+  .container {
+    width: min(100% - 48px, 700px);
+  }
+
+  .nav {
+    gap: 18px;
+  }
+
+  .nav-wrap {
+    gap: 18px;
+  }
+
+  .hero {
+    min-height: 485px;
+  }
+
+  .hero-content {
+    padding-left: 7%;
+  }
+
+  .benefit {
+    padding: 0 10px;
+    gap: 9px;
+  }
+
+  .benefit small {
+    font-size: 9px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 16px;
+  }
+
+  .story-content {
+    padding: 35px 9%;
+  }
+
+  .story-content h2 {
+    font-size: 33px;
+  }
+}
+
+@media (max-width: 650px) {
+  .container {
+    width: calc(100% - 36px);
+  }
+
+  .topline {
+    height: 30px;
+    font-size: 9px;
+  }
+
+  .header {
+    height: 66px;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .menu-toggle {
+    display: inline-grid;
+  }
+
+  .nav {
+    position: absolute;
+    z-index: 5;
+    top: 96px;
+    right: 18px;
+    left: 18px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 18px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--white);
+    box-shadow: 0 12px 25px #1c30241c;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav a:last-child {
+    border: 0;
+  }
+
+  .hero {
+    min-height: 480px;
+  }
+
+  .hero::before {
+    background-image: linear-gradient(90deg, rgba(17, 37, 27, .8), rgba(17, 37, 27, .32)), url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1100&q=85");
+    background-position: 59% center;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding: 83px 25px 78px;
+  }
+
+  .hero h1 {
+    font-size: clamp(51px, 13vw, 70px);
+  }
+
+  .hero-copy {
+    max-width: 320px;
+    font-size: 13px;
+  }
+
+  .hero-note {
+    right: 20px;
+    bottom: 20px;
+    font-size: 8px;
+  }
+
+  .benefits {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 19px 0;
+    padding: 21px 0;
+  }
+
+  .benefit {
+    padding-left: 0;
+    border-right: 0;
+  }
+
+  .benefit:nth-child(even) {
+    padding-left: 10px;
+  }
+
+  .section {
+    padding: 58px 0 62px;
+  }
+
+  .section-heading {
+    align-items: start;
+    margin-bottom: 22px;
+  }
+
+  .section-heading h2 {
+    font-size: 35px;
+  }
+
+  .section-heading .text-link {
+    align-self: end;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+
+  .filter {
+    white-space: nowrap;
+  }
+
+  .products {
+    gap: 24px 11px;
+  }
+
+  .product-image {
+    aspect-ratio: 1 / 1.04;
+  }
+
+  .product-info {
+    padding-top: 11px;
+  }
+
+  .product-title {
+    font-size: 12px;
+    min-height: 35px;
+  }
+
+  .variant-row {
+    gap: 4px;
+  }
+
+  .size-options,
+  .color-options {
+    gap: 4px;
+  }
+
+  .size-option {
+    min-width: 35px;
+    padding: 0 5px;
+  }
+
+  .color-option {
+    width: 17px;
+    height: 17px;
+  }
+
+  .product-category {
+    font-size: 8px;
+  }
+
+  .price {
+    font-size: 12px;
+  }
+
+  .old-price {
+    display: block;
+    margin: 3px 0 0;
+  }
+
+  .add-cart {
+    width: 31px;
+    height: 31px;
+    flex: 0 0 31px;
+  }
+
+  .story {
+    grid-template-columns: 1fr;
+  }
+
+  .story-image {
+    min-height: 230px;
+  }
+
+  .story-content {
+    padding: 33px 25px 38px;
+  }
+
+  .story-content h2 {
+    font-size: 35px;
+  }
+
+  .newsletter {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 54px auto 60px;
+    padding: 26px 22px;
+  }
+
+  .newsletter h2 {
+    font-size: 24px;
+  }
+
+  .subscribe-form {
+    width: 100%;
+    min-height: 43px;
+  }
+
+  .footer-inner {
+    flex-wrap: wrap;
+  }
+
+  .footer-links {
+    order: 3;
+    width: 100%;
+  }
+
+  .footer-copy {
+    margin-left: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
