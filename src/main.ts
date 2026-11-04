@@ -19,8 +19,27 @@ function getDataValue(element: HTMLElement, key: string): string {
 
 const cartCount = getElement("#cart-count");
 const toast = getElement("#toast");
+const products = getElement("#products");
+const productDetail = getElement("#product-detail");
+const detailBack = getElement<HTMLButtonElement>("#detail-back");
+const detailSize = getElement("#detail-size");
+const detailTitle = getElement("#detail-title");
+const detailVisual = getElement("#detail-visual");
+const detailColorLabel = getElement("#detail-color-label");
+const detailAddCart = getElement<HTMLButtonElement>("#detail-add-cart");
+const detailColors =
+  productDetail.querySelectorAll<HTMLButtonElement>(".detail-color");
+const productCards = products.querySelectorAll<HTMLElement>(".product-card");
+
+if (productCards.length !== 2) {
+  throw new Error(`Expected two size cards, found ${productCards.length}`);
+}
+
 let cartItems = 0;
 let toastTimer = 0;
+let selectedSize = "";
+let selectedColor = "Белый";
+let lastOpenButton: HTMLButtonElement | null = null;
 
 function showToast(message: string): void {
   toast.textContent = message;
@@ -29,72 +48,64 @@ function showToast(message: string): void {
   toastTimer = window.setTimeout(() => toast.classList.remove("show"), 2400);
 }
 
-document.querySelectorAll<HTMLButtonElement>(".filter").forEach((button) => {
-  button.addEventListener("click", () => {
-    document.querySelector(".filter.active")?.classList.remove("active");
-    button.classList.add("active");
-
-    document.querySelectorAll<HTMLElement>(".product-card").forEach((card) => {
-      card.hidden =
-        button.dataset.category !== "all" &&
-        card.dataset.category !== button.dataset.category;
-    });
-  });
-});
-
-document.querySelectorAll<HTMLButtonElement>(".add-cart").forEach((button) => {
-  button.addEventListener("click", () => {
-    const card = button.closest<HTMLElement>(".product-card");
-    if (!card) {
-      throw new Error("Cart button must be inside a product card");
-    }
-
-    const name = getElementWithin(card, ".product-title").textContent?.trim();
-    const size = getElementWithin(card, ".size-option.active");
-    const color = getElementWithin(card, ".color-option.active");
-    if (!name) {
-      throw new Error("Product title must not be empty");
-    }
-
-    cartItems += 1;
-    cartCount.textContent = String(cartItems);
-    showToast(
-      formatAddedMessage(
-        name,
-        getDataValue(size, "size"),
-        getDataValue(color, "color"),
-      ),
-    );
-  });
-});
-
-function getElementWithin<T extends HTMLElement>(
-  parent: ParentNode,
-  selector: string,
-): T {
-  const element = parent.querySelector<T>(selector);
-  if (!element) {
-    throw new Error(`Required element not found within product card: ${selector}`);
-  }
-  return element;
+function openDetails(button: HTMLButtonElement): void {
+  selectedSize = getDataValue(button, "size");
+  detailSize.textContent = selectedSize;
+  detailTitle.textContent = `Приманка ${selectedSize}`;
+  lastOpenButton = button;
+  products.hidden = true;
+  productDetail.hidden = false;
+  selectDetailColor(detailColors[0]);
+  detailBack.focus();
 }
 
-document
-  .querySelectorAll<HTMLButtonElement>(".size-option, .color-option")
-  .forEach((button) => {
-    button.addEventListener("click", () => {
-      const options = button.parentElement?.querySelectorAll("button");
-      if (!options) {
-        throw new Error("Selection button must have an options container");
-      }
+function selectDetailColor(button: HTMLButtonElement): void {
+  selectedColor = getDataValue(button, "name");
+  const background = getDataValue(button, "background");
+  detailVisual.style.backgroundColor = background;
+  detailVisual.classList.toggle("red-background", selectedColor === "Красный");
+  detailColorLabel.textContent = `Цвет фона: ${selectedColor}`;
 
-      options.forEach((option) => {
-        const selected = option === button;
-        option.classList.toggle("active", selected);
-        option.setAttribute("aria-pressed", String(selected));
-      });
-    });
+  detailColors.forEach((option) => {
+    const selected = option === button;
+    option.classList.toggle("active", selected);
+    option.setAttribute("aria-pressed", String(selected));
   });
+}
+
+document.querySelectorAll<HTMLButtonElement>(".product-open").forEach((button) => {
+  button.addEventListener("click", () => openDetails(button));
+});
+
+productCards.forEach((card) => {
+  card.addEventListener("click", (event) => {
+    if (event.target instanceof Element && event.target.closest("button")) {
+      return;
+    }
+
+    const openButton = card.querySelector<HTMLButtonElement>(".product-open");
+    if (!openButton) {
+      throw new Error("Product card must contain a details button");
+    }
+    openDetails(openButton);
+  });
+});
+
+detailColors.forEach((button) => {
+  button.addEventListener("click", () => selectDetailColor(button));
+});
+
+detailBack.addEventListener("click", () => {
+  productDetail.hidden = true;
+  products.hidden = false;
+  lastOpenButton?.focus();
+});
+
+detailAddCart.addEventListener("click", () => {
+  cartItems += 1;
+  cartCount.textContent = String(cartItems);
+  showToast(formatAddedMessage("Приманка", selectedSize, selectedColor));
+});
 
 document.querySelectorAll<HTMLButtonElement>(".favorite").forEach((button) => {
   button.addEventListener("click", () => {
