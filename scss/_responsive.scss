@@ -12,11 +12,15 @@
   }
 
   .hero {
-    min-height: 485px;
+    min-height: 450px;
   }
 
   .hero-content {
-    padding-left: 7%;
+    padding-left: 8%;
+  }
+
+  .hero-image {
+    max-height: 500px;
   }
 
   .benefit {
@@ -104,17 +108,21 @@
   }
 
   .hero {
-    min-height: 480px;
-  }
-
-  .hero::before {
-    background-image: linear-gradient(90deg, rgba(66, 10, 14, .82), rgba(112, 16, 23, .3)), url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1100&q=85");
-    background-position: 59% center;
+    grid-template-columns: 1fr;
+    min-height: 0;
   }
 
   .hero-content {
     width: 100%;
-    padding: 83px 25px 78px;
+    padding: 48px 25px 28px;
+  }
+
+  .hero-image-wrap {
+    max-height: 300px;
+  }
+
+  .hero-image {
+    max-height: 300px;
   }
 
   .hero h1 {
@@ -127,8 +135,12 @@
   }
 
   .hero-note {
-    right: 20px;
-    bottom: 20px;
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    grid-row: 3;
+    margin: 0 25px 20px;
     font-size: 8px;
   }
 
@@ -185,7 +197,7 @@
   }
 
   .product-image {
-    aspect-ratio: 1 / 1.04;
+    aspect-ratio: 1.27 / 1;
   }
 
   .product-info {
@@ -230,7 +242,7 @@
     min-height: 270px;
   }
 
-  .detail-visual svg {
+  .detail-visual img {
     height: 230px;
   }
 

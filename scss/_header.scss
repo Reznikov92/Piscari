@@ -10,7 +10,7 @@
 }
 
 .topline span {
-  color: #ffb6b9;
+  color: #ffc08b;
   margin: 0 5px;
 }
 
@@ -37,16 +37,30 @@
 
 .brand-logo {
   display: block;
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   object-fit: cover;
+}
+
+.brand-name {
+  color: var(--ink);
+  font: 800 20px/1 var(--display);
+  letter-spacing: .06em;
+}
+
+.brand-name small {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font: 700 7px/1 var(--sans);
+  letter-spacing: .16em;
 }
 
 .nav {
   display: flex;
   align-items: center;
   gap: 34px;
-  color: #535b54;
+  color: var(--muted);
   font-size: 13px;
 }
 

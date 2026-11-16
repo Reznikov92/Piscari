@@ -5,7 +5,7 @@
   min-height: 365px;
   overflow: hidden;
   border-radius: 4px;
-  background: #fff0f0;
+  background: #102326;
 }
 
 .story-image {
@@ -35,7 +35,7 @@
 .story-content p {
   max-width: 380px;
   margin: 0;
-  color: #687168;
+  color: var(--muted);
   font-size: 13px;
   line-height: 1.8;
 }
@@ -43,7 +43,7 @@
 .story-content .button {
   margin-top: 23px;
   background: var(--green);
-  color: white;
+  color: #172323;
 }
 
 .story-content .button:hover {

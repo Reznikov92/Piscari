@@ -25,6 +25,7 @@ const detailBack = getElement<HTMLButtonElement>("#detail-back");
 const detailSize = getElement("#detail-size");
 const detailTitle = getElement("#detail-title");
 const detailVisual = getElement("#detail-visual");
+const detailImage = getElement<HTMLImageElement>("#detail-image");
 const detailColorLabel = getElement("#detail-color-label");
 const detailAddCart = getElement<HTMLButtonElement>("#detail-add-cart");
 const detailColors =
@@ -50,8 +51,18 @@ function showToast(message: string): void {
 
 function openDetails(button: HTMLButtonElement): void {
   selectedSize = getDataValue(button, "size");
+  const selectedCard = Array.from(productCards).find(
+    (card) => getDataValue(card, "size") === selectedSize,
+  );
+  const selectedPhoto = selectedCard?.querySelector<HTMLImageElement>(".product-photo");
+  if (!selectedPhoto) {
+    throw new Error(`Product photo not found for size ${selectedSize}`);
+  }
+
   detailSize.textContent = selectedSize;
   detailTitle.textContent = `Приманка ${selectedSize}`;
+  detailImage.src = selectedPhoto.src;
+  detailImage.alt = selectedPhoto.alt;
   lastOpenButton = button;
   products.hidden = true;
   productDetail.hidden = false;

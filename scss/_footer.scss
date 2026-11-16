@@ -21,7 +21,7 @@
 
 .newsletter p {
   margin: 0;
-  color: #ffe2e3;
+  color: #ffe1ca;
   font-size: 11px;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .subscribe-form input::placeholder {
-  color: #ffd0d2;
+  color: #ffd0aa;
 }
 
 .subscribe-form button {
@@ -53,7 +53,7 @@
   border-radius: 2px;
   padding: 0 15px;
   background: var(--lime);
-  color: var(--green-dark);
+  color: #172323;
   cursor: pointer;
   font-size: 11px;
   font-weight: 700;
@@ -73,14 +73,14 @@
 
 .footer-note,
 .footer-copy {
-  color: #858b81;
+  color: var(--muted);
   font-size: 10px;
 }
 
 .footer-links {
   display: flex;
   gap: 22px;
-  color: #5d665e;
+  color: var(--muted);
   font-size: 11px;
 }
 
