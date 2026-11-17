@@ -39,7 +39,7 @@ if (productCards.length !== 2) {
 let cartItems = 0;
 let toastTimer = 0;
 let selectedSize = "";
-let selectedColor = "Белый";
+let selectedColor = "Синий";
 let lastOpenButton: HTMLButtonElement | null = null;
 
 function showToast(message: string): void {
@@ -74,7 +74,6 @@ function selectDetailColor(button: HTMLButtonElement): void {
   selectedColor = getDataValue(button, "name");
   const background = getDataValue(button, "background");
   detailVisual.style.backgroundColor = background;
-  detailVisual.classList.toggle("red-background", selectedColor === "Красный");
   detailColorLabel.textContent = `Цвет фона: ${selectedColor}`;
 
   detailColors.forEach((option) => {

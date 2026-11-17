@@ -5,8 +5,8 @@
   gap: 30px;
   margin: 75px auto 80px;
   padding: 31px 38px;
-  border-radius: 4px;
-  background: var(--green);
+  border-radius: 16px;
+  background: var(--white);
   color: white;
 }
 
@@ -21,7 +21,7 @@
 
 .newsletter p {
   margin: 0;
-  color: #ffe1ca;
+  color: var(--muted);
   font-size: 11px;
 }
 
@@ -40,20 +40,20 @@
   outline: 0;
   padding: 0 12px;
   background: transparent;
-  color: white;
+  color: var(--ink);
   font: 12px var(--sans);
 }
 
 .subscribe-form input::placeholder {
-  color: #ffd0aa;
+  color: var(--muted);
 }
 
 .subscribe-form button {
   border: 0;
   border-radius: 2px;
   padding: 0 15px;
-  background: var(--lime);
-  color: #172323;
+  background: var(--green);
+  color: #101725;
   cursor: pointer;
   font-size: 11px;
   font-weight: 700;

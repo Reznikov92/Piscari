@@ -82,13 +82,13 @@
   cursor: pointer;
   padding: 14px;
   border: 1px solid var(--line);
-  border-radius: 5px;
+  border-radius: 18px;
   background: var(--white);
   transition: border-color .2s, transform .2s, box-shadow .2s;
 }
 
 .product-card:hover {
-  border-color: #ba6339;
+  border-color: var(--green);
   box-shadow: 0 12px 30px rgba(0, 0, 0, .24);
   transform: translateY(-3px);
 }
@@ -97,8 +97,8 @@
   position: relative;
   overflow: hidden;
   aspect-ratio: 1.27 / 1;
-  border-radius: 4px;
-  background: #fff;
+  border-radius: 12px;
+  background: #242c3b;
 }
 
 .product-photo {
@@ -118,9 +118,9 @@
   top: 12px;
   left: 12px;
   padding: 6px 9px;
-  border-radius: 2px;
-  background: var(--lime);
-  color: var(--green-dark);
+  border-radius: 3px;
+  background: var(--orange);
+  color: #fff;
   font-size: 9px;
   font-weight: 700;
 }
@@ -331,7 +331,7 @@
   align-items: center;
   padding: 22px;
   border: 1px solid var(--line);
-  border-radius: 5px;
+  border-radius: 18px;
   background: var(--white);
 }
 
@@ -340,8 +340,8 @@
   display: grid;
   place-items: center;
   overflow: hidden;
-  border-radius: 4px;
-  background: #173537;
+  border-radius: 12px;
+  background: #7eb3ff;
   transition: background .25s;
 }
 
@@ -349,7 +349,6 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  mix-blend-mode: multiply;
   transition: transform .3s;
 }
 
@@ -399,23 +398,15 @@
 }
 
 .detail-color[data-name="Белый"] {
-  background: #fff;
+  background: #f8f8f8;
 }
 
-.detail-color[data-name="Розовый"] {
-  background: #f8dfe0;
-}
-
-.detail-color[data-name="Перламутр"] {
-  background: linear-gradient(135deg, #fff, #b7c8c8);
+.detail-color[data-name="Синий"] {
+  background: #7eb3ff;
 }
 
 .detail-color[data-name="Красный"] {
-  background: #db1720;
-}
-
-.detail-color[data-name="Светлый"] {
-  background: #f1eeee;
+  background: #ff0000;
 }
 
 .detail-order {

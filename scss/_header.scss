@@ -3,14 +3,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--green-dark);
+  background: var(--orange);
   color: #ffffff;
   font-size: 11px;
   letter-spacing: .07em;
 }
 
 .topline span {
-  color: #ffc08b;
+  color: #f8f8f8;
   margin: 0 5px;
 }
 
@@ -18,7 +18,7 @@
   height: 78px;
   display: flex;
   align-items: center;
-  background: var(--paper);
+  background: rgba(9, 13, 23, .72);
 }
 
 .nav-wrap {

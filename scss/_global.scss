@@ -1,13 +1,13 @@
 :root {
-  --paper: #091719;
-  --white: #102326;
-  --ink: #f0f3ed;
-  --muted: #9aafac;
-  --green: #f07835;
-  --green-dark: #c95122;
-  --lime: #ffad67;
-  --orange: #f07835;
-  --line: #254144;
+  --paper: #090d17;
+  --white: #242c3b;
+  --ink: #f8f8f8;
+  --muted: #aeb8c9;
+  --green: #7eb3ff;
+  --green-dark: #d90000;
+  --lime: #7eb3ff;
+  --orange: #ff0000;
+  --line: #394354;
   --serif: Georgia, "Times New Roman", serif;
   --sans: "DM Sans", Arial, sans-serif;
   --display: "Manrope", Arial, sans-serif;
@@ -23,7 +23,13 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(rgba(5, 8, 16, .54), rgba(5, 8, 16, .78)),
+    url("/assets/piscari-background.jpg");
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;

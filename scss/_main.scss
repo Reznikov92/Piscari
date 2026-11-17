@@ -5,9 +5,9 @@
   align-items: center;
   min-height: 500px;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 18px;
   color: white;
-  background: linear-gradient(125deg, #102d30, #071416);
+  background: linear-gradient(125deg, rgba(36, 44, 59, .96), rgba(9, 13, 23, .96));
 }
 
 .hero-image-wrap {
@@ -16,7 +16,7 @@
   place-items: center;
   align-self: stretch;
   overflow: hidden;
-  background: radial-gradient(ellipse at 60% 48%, #153b3e 0%, #091719 72%);
+  background: radial-gradient(ellipse at 60% 48%, #303b50 0%, #090d17 72%);
 }
 
 .hero-image {
@@ -38,7 +38,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #ffbd82;
+  color: var(--lime);
   text-transform: uppercase;
   letter-spacing: .17em;
   font-size: 10px;
@@ -82,7 +82,7 @@
   border-radius: 3px;
   padding: 0 21px;
   background: var(--lime);
-  color: #172323;
+  color: #101725;
   cursor: pointer;
   font-size: 12px;
   font-weight: 700;
@@ -91,7 +91,7 @@
 
 .button:hover {
   transform: translateY(-2px);
-  background: #ffc38f;
+  background: #9ac5ff;
 }
 
 .button svg {
@@ -150,7 +150,7 @@
   place-items: center;
   flex: 0 0 34px;
   border-radius: 50%;
-  background: #173537;
+  background: #303b50;
   color: var(--green);
 }
 
