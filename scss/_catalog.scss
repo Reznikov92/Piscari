@@ -98,7 +98,7 @@
   overflow: hidden;
   aspect-ratio: 1.27 / 1;
   border-radius: 12px;
-  background: #242c3b;
+  background: #fff;
 }
 
 .product-photo {
@@ -341,19 +341,30 @@
   place-items: center;
   overflow: hidden;
   border-radius: 12px;
-  background: #7eb3ff;
-  transition: background .25s;
+  background: #fff;
 }
 
 .detail-visual img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform .3s;
+  transition: transform .3s, filter .25s;
 }
 
 .detail-visual:hover img {
   transform: scale(1.03);
+}
+
+#detail-image[data-color="blue"] {
+  filter: hue-rotate(190deg) saturate(1.4);
+}
+
+#detail-image[data-color="red"] {
+  filter: hue-rotate(-20deg) saturate(1.3);
+}
+
+#detail-image[data-color="white"] {
+  filter: grayscale(1) brightness(1.6);
 }
 
 .detail-info .product-title {

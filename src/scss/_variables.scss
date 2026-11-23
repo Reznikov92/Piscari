@@ -1,0 +1,38 @@
+/* ПРЕМИАЛЬНАЯ ТЁПЛАЯ БЕЖЕВАЯ ПАЛИТРА (СВЕТЛЫЙ ПЕСОЧНЫЙ) */
+$bg-main: #f5ebe0;       // Мягкий светлый бежевый цвет песчаного берега
+$bg-card: #fdf8f5;       // Нежный кремовый оттенок для карточек и шапки
+$border-color: #e3d5ca;  // Тёплые аккуратные рамки-границы
+$color-text: #281a14;    // Глубокий кофейно-коричневый текст
+$color-brand: #cc1111;   // Контрастный красный для кнопок
+$color-max: #7B2CBF;     
+$color-max-hover: #5A189A;
+
+.hidden {
+  display: none;
+}
+
+/* СБРОС ЗАЗОРОВ: Шапка намертво прижимается к самому верху экрана */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+html, body, button, a, span, h1, h2, h3, p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $bg-main;
+  color: $color-text;
+  font-size: 1rem; 
+}
+
+#main-page, #product-page {
+  flex: 1;
+}

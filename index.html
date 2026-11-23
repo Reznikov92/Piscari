@@ -25,7 +25,7 @@
         <a href="#contacts">Контакты</a>
       </nav>
       <div class="header-actions">
-        <button class="icon-button" type="button" aria-label="Корзина">
+        <button class="icon-button" id="cart-toggle" type="button" aria-label="Открыть корзину, товаров: 0" aria-haspopup="dialog" aria-controls="cart-dialog" aria-expanded="false">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 11.1a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 1.9-1.4L21 8H6M10 21h.01M18 21h.01"/></svg>
           <span class="cart-count" id="cart-count">0</span>
         </button>
@@ -103,20 +103,20 @@
           <button class="detail-back" id="detail-back" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>Назад к размерам</button>
           <div class="detail-layout">
             <div class="detail-visual" id="detail-visual">
-              <img id="detail-image" src="/assets/lure-25mm-cutout.png" alt="Реальная приманка PISCARI размером 25 мм">
+              <img id="detail-image" src="/assets/lure-25mm-cutout.png" alt="Реальная приманка PISCARI размером 25 мм" data-color="blue">
             </div>
             <div class="detail-info">
               <div class="section-kicker" id="detail-size">25 мм</div>
               <h3 class="product-title" id="detail-title">Приманка 25 мм</h3>
-              <p class="detail-description">Выбери фирменный цвет фона карточки.</p>
-              <span class="detail-color-label" id="detail-color-label">Цвет фона: Синий</span>
-              <div class="detail-colors" role="group" aria-label="Цвет фона карточки">
-                <button class="detail-color active" type="button" data-name="Синий" data-background="#7eb3ff" aria-label="Синий" aria-pressed="true"></button>
-                <button class="detail-color" type="button" data-name="Красный" data-background="#ff0000" aria-label="Красный" aria-pressed="false"></button>
-                <button class="detail-color" type="button" data-name="Белый" data-background="#f8f8f8" aria-label="Белый" aria-pressed="false"></button>
+              <p class="detail-description">Выбери цвет приманки.</p>
+              <span class="detail-color-label" id="detail-color-label">Цвет приманки: Синий</span>
+              <div class="detail-colors" role="group" aria-label="Цвет приманки">
+                <button class="detail-color active" type="button" data-name="Синий" data-color="blue" aria-label="Синий цвет приманки" aria-pressed="true"></button>
+                <button class="detail-color" type="button" data-name="Красный" data-color="red" aria-label="Красный цвет приманки" aria-pressed="false"></button>
+                <button class="detail-color" type="button" data-name="Белый" data-color="white" aria-label="Белый цвет приманки" aria-pressed="false"></button>
               </div>
               <div class="detail-order">
-                <span class="detail-price">190 ₽</span>
+                <span class="detail-price" id="detail-price" data-price="190">190 ₽</span>
                 <button class="add-cart" id="detail-add-cart" type="button" aria-label="Добавить приманку в корзину"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-7-7h14"/></svg>В корзину</button>
               </div>
             </div>
@@ -128,7 +128,7 @@
         <div class="story-content">
           <div class="section-kicker">Компактные приманки — большой выбор</div>
           <h2>Нужный размер.<br>Твоя расцветка.</h2>
-          <p>Выбирай размер приманки и фон карточки под настроение. Собери свою палитру и возьми на рыбалку тот вариант, которому доверяешь.</p>
+          <p>Выбирай размер и цвет приманки под настроение. Собери свой набор и возьми на рыбалку тот вариант, которому доверяешь.</p>
           <a class="button" href="#catalog">Выбрать приманки
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>
           </a>
@@ -172,6 +172,21 @@
       <div class="footer-copy">© 2026 PISCARI</div>
     </div>
   </footer>
+  <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
+    <div class="cart-header">
+      <div>
+        <div class="section-kicker">Ваш заказ</div>
+        <h2 id="cart-title">Корзина</h2>
+      </div>
+      <button class="cart-close" id="cart-close" type="button" aria-label="Закрыть корзину">×</button>
+    </div>
+    <p class="cart-empty" id="cart-empty" role="status">Корзина пуста. Добавьте приманку из каталога.</p>
+    <ul class="cart-items" id="cart-items" aria-label="Товары в корзине"></ul>
+    <div class="cart-summary" id="cart-summary" hidden>
+      <span>Итого</span>
+      <strong id="cart-total">0 ₽</strong>
+    </div>
+  </dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script type="module" src="/src/main.ts"></script>

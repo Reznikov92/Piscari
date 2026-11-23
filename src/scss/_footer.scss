@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+.footer { 
+  background-color: $bg-card; border-top: 0.125rem solid $border-color; padding: 2.5rem 5%; margin-top: 3.75rem; 
+  .footer-content { max-width: 75rem; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.875rem; }
+
+  .footer-info {
+    max-width: 25rem; 
+    h3 { color: #fff; font-size: 1.375rem; margin-bottom: 0.625rem; }
+    p { color: #a0a6a1; font-size: 0.875rem; line-height: 1.6; }
+    
+    .footer-legal {
+      margin-top: 0.9375rem; border-top: 0.0625rem solid $border-color; padding-top: 0.625rem;
+      p { font-size: 0.6875rem; color: #636e65; line-height: 1.5; margin-bottom: 0.25rem; }
+      .inn-placeholder { font-style: italic; }
+    }
+    .copyright { margin-top: 0.9375rem; font-size: 0.75rem; color: #636e65; }
+  }
+
+  .footer-socials {
+    h4 { color: #fff; margin-bottom: 0.9375rem; font-size: 1rem; }
+    .social-buttons { display: flex; gap: 0.9375rem; }
+    
+    .social-link { 
+      display: inline-block; padding: 0.625rem 1.25rem; color: #fff; text-decoration: none; font-weight: bold; border-radius: 0.25rem; font-size: 0.875rem; transition: background 0.3s, transform 0.2s; 
+      &:hover { transform: translateY(-0.125rem); }
+      &.tg { background-color: #0088cc; &:hover { background-color: #0077b3; } }
+      &.vk { background-color: #0077ff; &:hover { background-color: #0066dd; } }
+      &.max { background-color: $color-max; &:hover { background-color: $color-max-hover; } }
+    }
+  }
+}

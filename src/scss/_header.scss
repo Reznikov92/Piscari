@@ -1,0 +1,110 @@
+@use 'variables' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0.9375rem 5%; 
+  background-color: $bg-card;
+  border-bottom: 0.125rem solid $border-color; 
+  position: relative; 
+
+  /* ТРЕХЗОННАЯ СЕТКА ШАПКИ НА ПК */
+  & > * {
+    flex: 1; /* Раздаем одинаковую ширину всем трем главным блокам */
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Прижимает рыбку строго к левому краю */
+
+    .logo-img {
+      height: 3.125rem;       
+      width: auto;         
+      object-fit: contain; 
+      background-color: transparent; 
+    }
+  }
+
+  /* ИСПРАВЛЕНО: Теперь монограмма стоит строго по центру, стала заметной и очень красивой */
+  .author-monogram {
+    display: flex;
+    justify-content: center; /* Центрирует буквы по центру экрана */
+    align-items: center;
+    font-size: 1.5rem; /* Увеличили размер букв, чтобы они были заметными */
+    font-weight: 900;
+    color: #4a3319; /* Насыщенный благородный золотисто-кофейный цвет */
+    letter-spacing: 0.35rem; /* Увеличили расстояние между заглавными буквами для премиального вида */
+    text-transform: uppercase;
+    text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(0, 0, 0, 0.05); /* Легкая воздушная тень под буквами */
+    
+    // Элегантная тонкая круговая рамка вокруг инициалов автора
+    border: 0.0625rem solid $border-color;
+    padding: 0.3125rem 1rem 0.3125rem 1.35rem; /* Компенсируем правый letter-spacing для идеального центра */
+    border-radius: 0.25rem;
+    max-width: max-content;
+    margin: 0 auto; /* Жестко удерживает блок по центру */
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Прижимает навигацию строго к правому краю */
+    gap: 8.5rem; 
+
+    .nav-links-group {
+      display: flex;
+      gap: 1.5625rem; 
+    }
+
+    a {
+      color: $color-text;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      &:hover { color: $color-brand; }
+    }
+
+    .header-socials { 
+      display: flex; 
+      gap: 0.625rem; 
+      align-items: center;
+
+      .nav-social {
+        display: flex; align-items: center; justify-content: center;
+        width: 2rem; height: 2rem; border-radius: 50%; color: #fff;
+        text-decoration: none; font-size: 0.6875rem; font-weight: bold;
+        transition: transform 0.2s, background-color 0.3s;
+        &:hover { transform: scale(1.1); }
+        &.tg { background-color: #0088cc; }
+        &.vk { background-color: #0077ff; }
+        &.max { background-color: $color-max; }
+      }
+    }
+  }
+
+  .burger-btn {
+    display: none; 
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.625rem; 
+    height: 1.125rem; 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    z-index: 101; 
+    overflow: visible;
+    padding: 0;
+
+    span {
+      display: block; width: 100%; height: 0.1875rem; background-color: $color-text; border-radius: 0.125rem; transition: all 0.3s ease-in-out;
+    }
+
+    &.open {
+      span:nth-child(1) { transform: translateY(0.4688rem) rotate(45deg); background-color: $color-brand; }
+      span:nth-child(2) { opacity: 0; }
+      span:nth-child(3) { transform: translateY(-0.4688rem) rotate(-45deg); background-color: $color-brand; }
+    }
+  }
+}
