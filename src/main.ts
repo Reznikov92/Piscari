@@ -302,3 +302,46 @@ mainNav.querySelectorAll<HTMLAnchorElement>("a").forEach((link) => {
     menuToggle.setAttribute("aria-label", "Открыть меню");
   });
 });
+
+const storyCarousel = document.querySelector<HTMLElement>(".story-carousel");
+if (storyCarousel) {
+  const storySlides = Array.from(storyCarousel.querySelectorAll<HTMLElement>(".story-slide"));
+  const storyDots = Array.from(storyCarousel.querySelectorAll<HTMLButtonElement>(".story-dot"));
+  let storyIndex = 0;
+  let storyTimer = 0;
+
+  const showStorySlide = (index: number): void => {
+    storyIndex = (index + storySlides.length) % storySlides.length;
+    storySlides.forEach((slide, slideIndex) => {
+      slide.classList.toggle("active", slideIndex === storyIndex);
+    });
+    storyDots.forEach((dot, dotIndex) => {
+      const active = dotIndex === storyIndex;
+      dot.classList.toggle("active", active);
+      dot.setAttribute("aria-selected", String(active));
+    });
+  };
+
+  const restartStoryTimer = (): void => {
+    window.clearInterval(storyTimer);
+    storyTimer = window.setInterval(() => showStorySlide(storyIndex + 1), 5000);
+  };
+
+  storyCarousel.querySelector<HTMLButtonElement>(".story-arrow-prev")?.addEventListener("click", () => {
+    showStorySlide(storyIndex - 1);
+    restartStoryTimer();
+  });
+  storyCarousel.querySelector<HTMLButtonElement>(".story-arrow-next")?.addEventListener("click", () => {
+    showStorySlide(storyIndex + 1);
+    restartStoryTimer();
+  });
+  storyDots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      showStorySlide(index);
+      restartStoryTimer();
+    });
+  });
+
+  showStorySlide(0);
+  restartStoryTimer();
+}
